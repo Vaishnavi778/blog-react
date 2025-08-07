@@ -1,0 +1,131 @@
+/* Home.css */
+
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fb;
+  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: white;
+  width: 100%;
+}
+
+.brand {
+  color: #ffe66d;
+}
+
+.home-nav {
+  display: flex;
+  gap: 20px;
+  background-color: white;
+  width: 100%;
+  justify-content: center;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home-nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.home-nav a:hover {
+  color: #667eea;
+}
+
+.home-main {
+  padding: 30px;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.intro-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.start-btn {
+  padding: 12px 24px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.start-btn:hover {
+  background-color: #5a67d8;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-card {
+  background-color: white;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  text-align: center;
+}
+
+.feature-card h3 {
+  color: #764ba2;
+}
+
+.home-footer {
+  margin-top: auto;
+  padding: 20px;
+  background-color: #eee;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+}
+.section-block {
+  margin-top: 60px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.create-form input,
+.create-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+}

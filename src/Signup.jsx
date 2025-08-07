@@ -1,50 +1,34 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import './Signup.css';
 
-import './Signup.css'
-import axios from 'axios'
-import React, { useState, useEffect } from 'react';
+function Register() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-import { Link, useNavigate } from 'react-router-dom';
-// import{useNavigate}from 'react-router-dom'
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import {BrowserRouter,Routes,Route,BrowserRouter}from'react-router-dom'
-function Signup() {
-    const navigate = useNavigate();
+  const handleRegister = (e) => {
+    e.preventDefault();
+    localStorage.setItem("user", JSON.stringify({ email, password }));
+    alert("You are registered successfully! Please login.");
+    navigate("/login");
+  };
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    useEffect(() => {
-        setEmail('');
-        setPassword('');
-        setName('');
-    }, []);
+  return (
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={handleRegister}>
+        <h2>Join <span>BlogMe</span> Today</h2>
+        <label>Email</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
 
+        <label>Password</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3001/register', { name, email, password })
-            .then(result => {
-                console.log(result)
-                navigate('/login')
-            })
-            .catch(err => console.log(err))
-    }
-    return (
-        <div className="main">
-            <div className="head">Register</div>
-
-            <div className="compo">
-                <form onSubmit={handleSubmit}>
-                    <label>Name:<br /><input type="text" placeholder="Enter Name:" onChange={(e) => setName(e.target.value)} /></label>
-                    <label>Email:<br /><input type="text" placeholder="Enter Email:" onChange={(e) => setEmail(e.target.value)} /></label>
-                    <label>Password:<br /><input type="password" placeholder="Enter Password:" onChange={(e) => setPassword(e.target.value)} /></label>
-                    <button id="op" type='submit'>Register</button>
-                </form>
-                <div id="hmm">Already Have an Account!!</div>
-                <Link to="/login"><button id="po">Login</button></Link>
-            </div>
-
-        </div>
-    )
+        <button type="submit">Register</button>
+        <p>Already have an account? <span onClick={() => navigate("/login")}>Login</span></p>
+      </form>
+    </div>
+  );
 }
-export default Signup
+
+export default Register;
