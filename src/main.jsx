@@ -6,7 +6,7 @@ import Signup from './Signup';
 import Login from './Login';
 import Home from './Home';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
